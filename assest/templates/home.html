@@ -1,0 +1,85 @@
+
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login101">
+				<style>
+					table {
+					    font-family: arial, sans-serif;
+					    border-collapse: collapse;
+					    width: 100%;
+					}
+
+					td, th {
+					    border: 1px solid #dddddd;
+					    text-align: left;
+					    padding: 8px;
+					}
+
+					tr:nth-child(even) {
+					    background-color: #dddddd;
+					}
+					</style>
+					<span class="login100-form-title">
+						Details of user
+					</span>
+				<!-- <select>
+				  <option ng-change="selectCurrency(currency)" ng-repeat="curr in currencyList" ng-model="currency">{{curr.currency}}</option>
+				</select> -->
+
+			<!-- 	<select  ng-model="selectedCurrency" ng-options="currency as currency.currency for currency in currencyList" 
+   ng-change="selectCurrency()" >
+   	
+   	 <option value=""> Select Currency </option> -->
+   </select>
+
+					<table>
+					  <tr>
+					    <th>User id</th>
+					   <!--  <th>Email id</th> -->
+					    <th>Amount</th>
+					    <th>Currency</th>
+					     <th>Identity</th>
+					      <th>Time</th>
+					      <th>Action</th>
+					  </tr>
+					  <tr ng-repeat="info in data">
+					    <td>{{info.userId}}</td>
+					    <!--  <td>{{info.email}}</td> -->
+					      <td>{{info.amount}}</td>
+					    <td>{{info.currency}}</td>
+					    <td>{{info.identity}}</td>
+					     <td>{{info.time | date:'short'}}</td>
+					     <td style="color:green;cursor:pointer;align-content:center" ng-click="withdraw(info)">Witdraw</td>
+
+
+					  </tr>
+				<!-- 	  <tr>
+					    <td>Centro comercial Moctezuma</td>
+					    <td>Francisco Chang</td>
+					    <td>Mexico</td>
+					  </tr>
+					  <tr>
+					    <td>Ernst Handel</td>
+					    <td>Roland Mendel</td>
+					    <td>Austria</td>
+					  </tr>
+					  <tr>
+					    <td>Island Trading</td>
+					    <td>Helen Bennett</td>
+					    <td>UK</td>
+					  </tr>
+					  <tr>
+					    <td>Laughing Bacchus Winecellars</td>
+					    <td>Yoshi Tannamuri</td>
+					    <td>Canada</td>
+					  </tr>
+					  <tr>
+					    <td>Magazzini Alimentari Riuniti</td>
+					    <td>Giovanni Rovelli</td>
+					    <td>Italy</td>
+					  </tr> -->
+					</table>
+								
+			</div>
+		</div>
+	</div>
