@@ -34,25 +34,28 @@ $scope.selectCurrency();
     //     toastr.error('Connection error.');
     // });
 $scope.withdraw = (data)=>{
+
 var data = {
 user_id: data.userId,
 currency : data.currency,
 balance :data.amount,
-address : "nsxjkwbxkwxjuwvxjhwbjxhbwxh",
-Identity : data.identity
+address : data.address,
+identity : '1',
+phrase:"test123walletphrase",
+_id:data._id
 }
-console.log("data===>>",data)
-    // userServices.sendBalance(data).then(function(success) {
-    //   console.log("getCurrencyList succes data======",success.data.result)
-    //     if (success.data.responseCode == 200) {
-    //         toastr.success(success.data.responseMessage)
-    //     } else {
-    //         toastr.error("No data found");
-    //     }
-    // }, function(err) {
-    //     console.log(err);
-    //     toastr.error('Connection error.');
-    // });
+console.log("data==>",data)
+    userServices.sendBalance(data).then(function(success) {
+        if (success.data.responseCode == 200) {
+            toastr.success(success.data.responseMessage)
+            $scope.selectCurrency();
+        } else {
+            toastr.error(success.data.responseMessage);
+        }
+    }, function(err) {
+        console.log(err);
+        toastr.error('Connection error.');
+    });
 
 
 }

@@ -19,7 +19,7 @@ app.service('userServices',function($http){
 		// },
 		sendBalance : function(data){
 			console.log("data===>>",data)
-			return $http.post(baseurlWithdraw+'/sendBalance',data);
+			return $http.post(baseurlWithdraw+'/sendBalanceApproved',data);
 		},
 		// scrape : function(data){
 			
