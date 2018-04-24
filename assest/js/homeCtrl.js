@@ -1,4 +1,5 @@
 app.controller('homeCtrl', function($scope, $state, userServices, toastr,$timeout) {
+    if(localStorage.getItem('_id')){
 $scope.selectedCurrency ={}
 
     $scope.selectCurrency = ()=>{
@@ -59,7 +60,13 @@ console.log("data==>",data)
 
 
 }
-
+$scope.logout = ()=>{
+    localStorage.removeItem('_id');
+    $state.go('login')
+}
+}else {
+    $state.go('login')
+}
 
 });                   
                                       

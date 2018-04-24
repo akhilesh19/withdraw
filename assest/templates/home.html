@@ -18,10 +18,21 @@
 					tr:nth-child(even) {
 					    background-color: #dddddd;
 					}
-					</style>
-					<span class="login100-form-title">
+					.logout{
+					margin-left: 547px;
+					font-size: 14px;
+					margin-top: -72px;
+					color: green;
+					cursor: pointer;
+					}
+				</style>
+					<div class="login100-form-title">
+					<span>
 						Details of user
 					</span>
+			
+				</div>
+				
 				<!-- <select>
 				  <option ng-change="selectCurrency(currency)" ng-repeat="curr in currencyList" ng-model="currency">{{curr.currency}}</option>
 				</select> -->
@@ -31,6 +42,8 @@
    	
    	 <option value=""> Select Currency </option> -->
    </select>
+<span class="logout" ng-click="logout()">Logout</span>
+
 
 					<table>
 					  <tr>
