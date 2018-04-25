@@ -62,6 +62,7 @@ console.log("data==>",data)
 }
 $scope.logout = ()=>{
     localStorage.removeItem('_id');
+    toastr.success('Logout successfully.')
     $state.go('login')
 }
 }else {
