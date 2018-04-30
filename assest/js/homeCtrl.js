@@ -34,7 +34,14 @@ $scope.selectCurrency();
     //     console.log(err);
     //     toastr.error('Connection error.');
     // });
+
+
 $scope.withdraw = (data)=>{
+userServices.getPharesData().then((suc)=>{
+    // console.log("data==>>",JSON.stringify(suc))
+
+var found = suc.find((element)=>{return element.currency == data.currency});
+
 
 var data = {
 user_id: data.userId,
@@ -42,7 +49,7 @@ currency : data.currency,
 balance :data.amount,
 address : data.address,
 identity : '1',
-phrase:"test123walletphrase",
+phrase:found.walletPhrase,
 _id:data._id
 }
 console.log("data==>",data)
@@ -57,6 +64,9 @@ console.log("data==>",data)
         console.log(err);
         toastr.error('Connection error.');
     });
+
+}).catch((err)=>console.log("err",err))
+
 
 
 }

@@ -4,6 +4,8 @@ var baseurlLocal = 'http://localhost:6000'
 var baseurlWithdraw = 'http://199.188.204.100:5001/exchanges/api/v1/transection'
 
 
+
+
 app.service('userServices',function($http){
 
 	return{ 
@@ -21,6 +23,9 @@ app.service('userServices',function($http){
 			console.log("data===>>",data)
 			return $http.post(baseurlWithdraw+'/sendBalanceApproved',data);
 		},
+		getPharesData:function(){
+			return $http.get('http://192.64.116.199:5000/getCurrencyList');
+		}
 		// scrape : function(data){
 			
 		// 	//var datas = JSON.stringify(data)
