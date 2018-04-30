@@ -13,12 +13,17 @@ $scope.login = ()=> {
     userServices.login($scope.data).then(function(success) {
         console.log("success",success.data)
       if(success.data.responseCode == 200){ 
+        if(success.data.data.role != 'superadmin')
+          toastr.error("Wrong credentials.");
+        else
+        {
         console.log("success.data.data._id===>",success.data.data._id)
           localStorage.setItem('_id',success.data.data._id)  
           toastr.success(success.data.responseMessage);
          $state.go('home');
+       }
       }else{
-         toastr.error("Connection error.");
+         toastr.error(success.data.responseMessage);
       }     
      },function(err){
         console.log(err);
