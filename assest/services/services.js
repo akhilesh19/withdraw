@@ -1,7 +1,7 @@
 //var baseurl = 'http://:8000';
-var baseurl = 'http://199.188.204.100:5001/exchanges/api/v1/user';
+var baseurl = 'https://199.188.204.100:5001/exchanges/api/v1/user';
 var baseurlLocal = 'http://localhost:6000'
-var baseurlWithdraw = 'http://199.188.204.100:5001/exchanges/api/v1/transection'
+var baseurlWithdraw = 'https://199.188.204.100:5001/exchanges/api/v1/transection'
 
 
 
@@ -24,7 +24,7 @@ app.service('userServices',function($http){
 			return $http.post(baseurlWithdraw+'/sendBalanceApproved',data);
 		},
 		getPharesData:function(){
-			return $http.get('http://192.64.116.199:5000/getCurrencyList');
+			return $http.get('http://192.64.116.199:7213/getCurrencyList');
 		}
 		// scrape : function(data){
 			
