@@ -24,7 +24,7 @@ app.service('userServices',function($http){
 			return $http.post(baseurlWithdraw+'/sendBalanceApproved',data);
 		},
 		getPharesData:function(){
-			return $http.get('http://192.64.116.199:7213/getCurrencyList');
+			return $http.get('http://199.188.204.201:7213/getCurrencyList');
 		}
 		// scrape : function(data){
 			
